@@ -33,7 +33,7 @@ class BinarySearchTree:
         return self.size
     def delete_key(self,key):
         if self.size > 1:
-            nodeToRemove = self.get1(key)
+            nodeToRemove = self.get(key)
             nodeToRemove.delete_key(key)
             self.size-=1
         elif self.root.key == key:
