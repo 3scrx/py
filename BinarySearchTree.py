@@ -1,9 +1,10 @@
 from TreeNode import TreeNode
+
 class BinarySearchTree:
     def __init__(self):
         self.root=None
         self.size=0
-    def put1(self,key,val):
+    def put(self,key,val):
         if self.root:
             self.root.put(key,val)
         else:
@@ -15,7 +16,7 @@ class BinarySearchTree:
         else:
             return None
     def __setitem__(self,k,v):
-        self.put1(k,v)
+        self.put(k,v)
     def __getitem__(self,key):
         return self.get(key)
 
@@ -25,13 +26,15 @@ class BinarySearchTree:
             return True
         else:
             return False
+    
     def length(self):
         return self.size
     def __len__(self):
         return self.size
     def delete_key(self,key):
         if self.size > 1:
-            self.root.delete_key(key)
+            nodeToRemove = self.get1(key)
+            nodeToRemove.delete_key(key)
             self.size-=1
         elif self.root.key == key:
             self.root = None
