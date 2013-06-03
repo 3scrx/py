@@ -4,21 +4,21 @@ class BinarySearchTree:
     def __init__(self):
         self.root=None
         self.size=0
-    def put(self,key,val):
+    def put1(self,key,val):
         if self.root:
             self.root.put(key,val)
         else:
             self.root = TreeNode(key,val)
         self.size +=1
-    def get(self,key):
+    def get1(self,key):
         if self.root:
             return self.root.get(key)
         else:
             return None
     def __setitem__(self,k,v):
-        self.put(k,v)
+        self.put1(k,v)
     def __getitem__(self,key):
-        return self.get(key)
+        return self.get1(key)
 
     
     def hash_key(self,key):
@@ -33,7 +33,7 @@ class BinarySearchTree:
         return self.size
     def delete_key(self,key):
         if self.size > 1:
-            nodeToRemove = self.get(key)
+            nodeToRemove = self.get1(key)
             nodeToRemove.delete_key(key)
             self.size-=1
         elif self.root.key == key:
@@ -47,11 +47,11 @@ class BinarySearchTree:
 
 #test
 bst=BinarySearchTree()
-bst[70]=70
-bst[31]=31
-bst[93]=93
-bst[94]=94
-bst[14]=14
-bst[23]=23
-bst[73]=73
+bst[17]=17
+bst[5]=5
+bst[35]=35
+bst[2]=2
+bst[11]=11
+bst[29]=29
+bst[36]=36
 
