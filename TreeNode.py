@@ -46,12 +46,12 @@ class TreeNode:
                 if self == self.patern.leftChild:
                     self.parent.leftChild = self.leftChild
                 else:
-                    self.parent.leftChild = self.rightChild
+                    self.parent.rightChild = self.leftChild
             else:
-                if self == self.patern.leftChild:
-                    self.parent.leftChild = self.leftChild
-                else:
+                if self == self.parent.leftChild:
                     self.parent.leftChild = self.rightChild
+                else:
+                    self.parent.righChild = self.rightChild
         else:
             print "iki cocuklu dugum"
             succ = self.findSuccessor()
@@ -60,8 +60,8 @@ class TreeNode:
                 self.parent.leftChild = succ
             else:
                 self.parent.rightChild = succ
-        succ.leftChild = self.leftChild
-        succ.rigthChild = self.rightChild
+            succ.leftChild = self.leftChild
+            succ.rigthChild = self.rightChild
         
                     
                     
